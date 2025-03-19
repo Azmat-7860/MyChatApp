@@ -1,10 +1,13 @@
-import React, { useContext, useReducer } from "react";
+import React, { useContext, useReducer, useState } from "react";
 import {useChat } from "../Context/ChatContext";
+import { AuthContext } from "../Context/AuthContext";
 
 
 const ChatItem = (chats) => {
   const {dispatch} = useChat()
+  const{model , setModel} = useContext(AuthContext)
   const handleClick = (user) => {
+    setModel(!model)
     dispatch({
       type: "CHANGE_USER",
       payload: user,

@@ -9,7 +9,7 @@ import { db } from "../Firebase";
 import { AuthContext } from "../Context/AuthContext";
 
 const ChatScreen = () => {
-  const {signInUser} = useContext(AuthContext);
+  const {signInUser,model} = useContext(AuthContext);
   const [messages, setMessages] = useState([]);
   const { state } = useChat();
 
@@ -27,7 +27,7 @@ const ChatScreen = () => {
 
 
   return (
-    <div className="chat-container ">
+    <div className={`chat-container `} >
       <TopBar userData={state} />
       <div 
         className="chat-box mb-4 d-flex flex-column  w-100 overflow-auto "

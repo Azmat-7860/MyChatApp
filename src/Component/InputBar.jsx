@@ -15,7 +15,8 @@ const InputBar = () => {
   const handleSubmit = async () => {
     if (state.chatId === "null") {
       // alert("select the user fast")
-      toast.error("Select the User fast.")
+      toast.error("Select the User first.")
+      setText("")
     }
     await updateDoc(doc(db,"chats",state.chatId),{//message is going to save
       message : arrayUnion({

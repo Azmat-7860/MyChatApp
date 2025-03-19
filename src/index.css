@@ -185,6 +185,7 @@ body {
 /* chat page css  */
 
 .ChatContainer {
+ 
   max-width: 800px;
   border-radius: 20px;
 }
@@ -363,8 +364,7 @@ body {
 
 /* Icons Section */
 .icons {
-  display: flex;
-  gap: 15px;
+  display: none;
 }
 
 /* Individual Icons */
@@ -375,6 +375,7 @@ body {
 }
 
 .chat-list-container {
+  display: block;
   border-radius: 10px;
   width: 40%;
   display: inline-block;
@@ -489,3 +490,5 @@ body {
   border-radius: 12px;
   font-weight: bold;
 }
+
+

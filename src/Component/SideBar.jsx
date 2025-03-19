@@ -8,7 +8,7 @@ import { doc, onSnapshot } from "firebase/firestore";
 import { db } from "../Firebase";
 
 const SideBar = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser ,model} = useContext(AuthContext);
   const [chats, setChats] = useState([]);
   useEffect(() => {
     const getChats = () => {
@@ -21,9 +21,10 @@ const SideBar = () => {
     };
     signInUser.uid && getChats();
   }, [signInUser.uid]);
+console.log(model);
 
   return (
-    <div className="chat-list-container">
+    <div className={`chat-list-container ${model ? "position-absolute z-3 d-block w-75 ": ""}`}>
       <Navbar />
       <SearchBar />
 

@@ -1,0 +1,96 @@
+@media (max-width: 480px) {
+  #root {
+    height: 100%;
+  }
+  .ChatContainer {
+    position: relative;
+    width: 100% !important;
+    height: 100%;
+    padding: 2px 3px 2px 7px;
+
+  }
+  .chat-list-container {
+    display: none;
+    width: 100vw;
+    height: 100%;
+  }
+  .brand-title {
+    display: none;
+  }
+
+  .chat-container {
+    height: 100%;
+    width: 99%;
+  }
+  .chat-container .topbar{
+    height: 9%;
+  }
+
+  .chat-container .input-container{
+    height: 8%;
+  }
+  .chat-container .chat-box{
+    height: 80%;
+  }
+  .icons {
+    display: block;
+  }
+  .cancel-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 768px) {
+  #root {
+    height: 100%;
+  }
+  .ChatContainer {
+    position: relative;
+    width: 70%;
+    height: 100%;
+    padding: 2px 3px 2px 7px;
+  }
+  .chat-list-container {
+    display: none;
+    width: 100vw;
+    height: 100%;
+  }
+  .brand-title {
+    display: none;
+  }
+  
+  .chat-container {
+    height: 100%;
+    width: 99%;
+  }
+  .chat-container .topbar{
+    height: 9%;
+  }
+
+  .chat-container .input-container{
+    height: 8%;
+  }
+  .chat-container .chat-box{
+    height: 80%;
+  }
+  .icons {
+    display: block;
+  }
+  .cancel-btn {
+    display: block;
+  }
+}
+
+@media (max-width: 1024px) {
+  .ChatContainer {
+    display: block;
+    width: 90%;
+  }
+}
+
+@media (max-width: 1280px) {
+  .ChatContainer {
+    display: block;
+    width: 90%;
+  }
+}

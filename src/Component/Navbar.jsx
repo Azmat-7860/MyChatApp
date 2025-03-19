@@ -3,9 +3,9 @@ import React, { useContext } from "react";
 import { SlLogout } from "react-icons/sl";
 import { auth } from "../Firebase";
 import { AuthContext } from "../Context/AuthContext";
-
+import { AiOutlineCloseCircle } from "react-icons/ai";
 const Navbar = () => {
-  const { signInUser } = useContext(AuthContext);
+  const { signInUser,model,setModel } = useContext(AuthContext);
   // const firstName = signInUser.displayName.split(" ")[0];
   return (
     <div className="navbar-container">
@@ -14,6 +14,9 @@ const Navbar = () => {
         <button onClick={() => signOut(auth)} className="logout-btn">
           <SlLogout size={"20px"} />
         </button>
+        <div className="icons" onClick={()=> setModel(!model)}>
+          <AiOutlineCloseCircle size={"30px"}/>
+        </div>
       </div>
 
       <marquee behavior="alternate" direction="">

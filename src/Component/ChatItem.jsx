@@ -6,8 +6,11 @@ import { AuthContext } from "../Context/AuthContext";
 const ChatItem = (chats) => {
   const {dispatch} = useChat()
   const{model , setModel} = useContext(AuthContext)
+  
   const handleClick = (user) => {
-    setModel(!model)
+    if (window.innerWidth < 769 ) {
+      setModel(!model)
+    }
     dispatch({
       type: "CHANGE_USER",
       payload: user,

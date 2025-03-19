@@ -12,7 +12,7 @@ const {model,setModel} = useContext(AuthContext)
       </div>
       <div className="user-info">
         <div className="text-info">
-          <span className="user-name text-capitalize">{userData.user?.displayName || "⬅ Select the User"}</span>
+          <span className="user-name fs-5 text-capitalize">{userData.user?.displayName || "⬅ Select the User"}</span>
         </div>
       </div>
     </div>

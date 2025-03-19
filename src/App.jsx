@@ -13,6 +13,7 @@ import ChatPage from "./Pages/ChatPage";
 
 function App() {
   const { signInUser } = useContext(AuthContext);
+// console.log(window.innerWidth);
 
   const ProtectedRoute = ({ children }) => {
     if (!signInUser) {
@@ -22,6 +23,7 @@ function App() {
   };
   return (
     //
+        
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />

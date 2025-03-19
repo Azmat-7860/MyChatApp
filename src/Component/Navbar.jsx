@@ -12,9 +12,10 @@ const Navbar = () => {
       <div className="d-flex justify-content-between w-100">
         <h2 className="brand-title m-0 mt-2">You & Me</h2>
         <button onClick={() => signOut(auth)} className="logout-btn">
-          <SlLogout size={"20px"} />
+          {/* <SlLogout size={"20px"} /> */}
+          Logout
         </button>
-        <div className="icons" onClick={()=> setModel(!model)}>
+        <div className="icons mt-2" style={{color: " #7f8c8d"}} onClick={()=> setModel(!model)}>
           <AiOutlineCloseCircle size={"30px"}/>
         </div>
       </div>

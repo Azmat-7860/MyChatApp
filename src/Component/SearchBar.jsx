@@ -1,5 +1,6 @@
 import React, { useContext, useState } from "react";
 import { FaSearch } from "react-icons/fa";
+import { MdPersonAddAlt1 } from "react-icons/md";
 import {
   collection,
   doc,
@@ -12,7 +13,7 @@ import {
   serverTimestamp,
 } from "firebase/firestore";
 import { db } from "../Firebase";
-import { toast } from "react-toastify";
+import { toast, ToastContainer } from "react-toastify";
 import { AuthContext } from "../Context/AuthContext";
 
 const SearchBar = () => {
@@ -21,24 +22,25 @@ const SearchBar = () => {
   const { signInUser } = useContext(AuthContext);
   const [open, setOpen] = useState(false);
 
+
   const handleSearch = async () => {
     const qri = query(
       collection(db, "peoples"),
-      where("displayName", "==", searchName)
+      where("displayName", "==", searchName.toLowerCase())
     );
 
     try {
       const querySnapshot = await getDocs(qri);
-      querySnapshot.forEach((doc) => {
-        setUser(doc.data());
-      });
+      if (querySnapshot.empty) {
+        toast.error("User Not Found ❌");
+      } else {
+        querySnapshot.forEach((doc) => {
+          setUser(doc.data());
+        });
+      }
     } catch (error) {
       toast.error(error.code);
     }
-  };
-
-  const handleKey = (e) => {
-    e.code === "Enter" && handleSearch();
   };
 
   const combinId =
@@ -77,30 +79,28 @@ const SearchBar = () => {
   };
   return (
     <div className="chat-list-header">
+      <ToastContainer />
       <div className="search-bar">
-        <FaSearch className="search-icon" />
         <input
           type="text"
           value={searchName}
           placeholder="Search"
-          onKeyDown={handleKey}
           onChange={(e) => setSearchName(e.target.value)}
         />
+        <FaSearch className="search-icon" onClick={handleSearch} />
       </div>
       {user && (
         <div
           className="chat-item search-list "
-          style={{ display: open ? "none" : "block" }}
-          onClick={handleSelect}
-        >
+          style={{ display: open ? "none" : "block" }}>
           <div className="chat-info">
             <div className="chat-header">
-              <h4>{user.displayName}</h4>
-              {/* <span className="chat-time">user.createdAt</span> */}
+              <h4 className="text-capitalize fs-5 mt-1">{user.displayName}</h4>
+              <span   onClick={handleSelect} className="chat-time"><MdPersonAddAlt1 size={"30px"}/></span>
             </div>
-            <div className="chat-message">
-              <p>his hsi afn</p>
-            </div>
+            {/* <div className="chat-message">
+              <p>ggh</p>
+            </div> */}
           </div>
         </div>
       )}

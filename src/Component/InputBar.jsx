@@ -64,7 +64,7 @@ const InputBar = () => {
       <input
         type="text"
         value={text}
-        autoFocus
+        
         placeholder="Message"
         className="message-input w-75"
         onChange={(e) => setText(e.target.value)}

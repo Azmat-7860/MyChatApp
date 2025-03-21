@@ -3,47 +3,54 @@
   .ChatContainer {
     position: relative;
     width: 100% !important;
-    height: 100%;
+    /* height: 100%; */
     padding: 2px 3px 2px 7px;
 
   }
   .chat-list-container {
     display: none;
-    width: 100vw;
-    height: 100%;
+    width: 99%;
+    height: 100vh;
   }
   .chat-list-container .navbar-container{
-    height: 14%;
+    height: 14vh;
   }
   .chat-list-container .chat-list-header{
-    height: 9%;
+    height: 9vh;
   }
   .chat-list-container .chat-list {
-    height: 38%;
+    height: 38vh;
   }
   .chat-list-container .chat-suggest {
-    height: 35%;
+    height: 35vh;
   }
 
+
+  
+  .chat-container {
+    /* border: 1px solid red  ; */
+    /* //this is correct */
+    height: 100%; 
+    width: 99%;
+  }
+  .chat-container .topbar{
+    height: 9%;
+    max-height: 45px;
+  }
+
+  .chat-container .input-container{
+    height: 8%;
+    max-height: 45px;
+
+  }
+  .chat-container .chat-box{
+    height: 77vh;
+  }
 
   .brand-title {
     display: none;
   }
 
-  .chat-container {
-    height: 100%;
-    width: 99%;
-  }
-  .chat-container .topbar{
-    height: 9%;
-  }
-
-  .chat-container .input-container{
-    height: 8%;
-  }
-  /* .chat-container .chat-box{
-    height: 80%;
-  } */
   .icons {
     display: block;
   }
@@ -57,7 +64,7 @@
   .ChatContainer {
     position: relative;
     width: 70%;
-    height: 100%;
+    /* height: 100%; */
     padding: 2px 3px 2px 7px;
   }
   .chat-list-container {
@@ -109,7 +116,7 @@
   }
   .chat-list-container {
     width: 40%;
-    height: 89vh !important;
+    height: 89vh ;
   }
   .chat-list-container .navbar-container{
     height: 14%;
@@ -123,6 +130,7 @@
   .chat-list-container .chat-suggest {
     height: 35%;
   }
+
   .chat-container {
     height: 100%;
   }
@@ -143,7 +151,7 @@
   }
   .chat-list-container {
     width: 40%;
-    height: 89vh !important;
+    height: 89vh ;
   }
   .chat-list-container .navbar-container{
     height: 14%;

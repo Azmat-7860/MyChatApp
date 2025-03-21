@@ -13,8 +13,6 @@ import ChatPage from "./Pages/ChatPage";
 
 function App() {
   const { signInUser } = useContext(AuthContext);
-// console.log(window.innerWidth);
-
   const ProtectedRoute = ({ children }) => {
     if (!signInUser) {
       return <Navigate to={"/"} />;

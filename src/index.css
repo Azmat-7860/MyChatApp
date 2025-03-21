@@ -187,6 +187,7 @@ body {
 /* chat page css  */
 
 .ChatContainer {
+  margin: auto;
   max-width: 800px;
   border-radius: 20px;
 }

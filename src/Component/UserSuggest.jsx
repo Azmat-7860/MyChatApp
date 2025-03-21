@@ -62,7 +62,7 @@ const UserSuggest = () => {
     });
   };
   return (
-    <div>
+    <div className="chat-suggest overflow-auto " style={{ scrollbarWidth: "none" }}>
 
       {user.length > 0 ? (
         user.map((ele) => (

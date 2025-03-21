@@ -48,7 +48,7 @@ const SideBar = () => {
         </div>
       </div>
         <p style={{fontSize: "14px"}} className="mb-0 fw-bold">Add New Freinds</p>
-        <div className="chat-suggest overflow-auto " style={{ scrollbarWidth: "none" }}>
+        <div >
 
         <UserSuggest />
         </div>

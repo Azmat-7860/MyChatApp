@@ -8,7 +8,7 @@ const ChatPage = () => {
 
   
   return (
-    <div className="ChatContainer d-flex gap-3 m-auto">
+    <div className="ChatContainer d-flex gap-3 ">
 
       <SideBar />
       <ChatScreen />

@@ -1,15 +1,16 @@
 import React, { useContext, useReducer, useState } from "react";
 import {useChat } from "../Context/ChatContext";
-import { AuthContext } from "../Context/AuthContext";
+import { ModelContext } from "../Context/ModelContext";
 
 
 const ChatItem = (chats) => {
   const {dispatch} = useChat()
-  const{model , setModel} = useContext(AuthContext)
+ const{onClose} = useContext(ModelContext);
+
   
   const handleClick = (user) => {
     if (window.innerWidth < 769 ) {
-      setModel(!model)
+     onClose()
     }
     dispatch({
       type: "CHANGE_USER",
@@ -29,7 +30,12 @@ const ChatItem = (chats) => {
           <span className="chat-time">{new Date(chats[1].date?.seconds * 1000).toLocaleDateString('en-US', { month: 'long', day: 'numeric' })}</span>
         </div>
         <div className="chat-message">
-          <p>{chats[1].lastMessage?.text}</p>
+        <p>
+  {chats[1]?.lastMessage?.text.length > 20
+    ? chats[1].lastMessage.text.slice(0, 20) + "..."
+    : chats[1]?.lastMessage?.text}
+</p>
+      
         </div>
       </div>
     </div>

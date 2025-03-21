@@ -6,7 +6,7 @@ export const AuthContext = createContext();
 
 export const AuthContextProvider = ({children}) => {
 const[signInUser,setSignInUser] = useState({});
-const[model,setModel] = useState(false);
+
 
 useEffect(()=> {
     onAuthStateChanged(auth,(user) =>{
@@ -15,7 +15,7 @@ useEffect(()=> {
 
 },[])
 
-return <AuthContext.Provider value={{signInUser,model,setModel}}>
+return <AuthContext.Provider value={{signInUser}}>
     {children}
 </AuthContext.Provider>
 }

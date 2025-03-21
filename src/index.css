@@ -469,6 +469,7 @@ body {
 }
 
 .chat-time {
+  font-size: small;
   color:  #7f8c8d ;
 }
 .msg-time {

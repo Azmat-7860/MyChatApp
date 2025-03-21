@@ -4,8 +4,11 @@ import { SlLogout } from "react-icons/sl";
 import { auth } from "../Firebase";
 import { AuthContext } from "../Context/AuthContext";
 import { AiOutlineCloseCircle } from "react-icons/ai";
+import { ModelContext } from "../Context/ModelContext";
 const Navbar = () => {
-  const { signInUser,model,setModel } = useContext(AuthContext);
+  const { signInUser } = useContext(AuthContext);
+ const{onClose} = useContext(ModelContext);
+ 
   // const firstName = signInUser.displayName.split(" ")[0];
   return (
     <div className="navbar-container">
@@ -15,7 +18,8 @@ const Navbar = () => {
           {/* <SlLogout size={"20px"} /> */}
           Logout
         </button>
-        <div className="icons mt-2" style={{color: " #7f8c8d"}} onClick={()=> setModel(!model)}>
+        <div className="icons mt-2" style={{color: " #7f8c8d"}} onClick={onClose}>
+        {/* <div className="icons mt-2" style={{color: " #7f8c8d"}} onClick={()=> setModel(!model)}> */}
           <AiOutlineCloseCircle size={"30px"}/>
         </div>
       </div>
